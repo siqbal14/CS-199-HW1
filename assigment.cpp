@@ -10,7 +10,7 @@ using namespace std;
 **/
 int sum(int param, int param2)
 {
-
+return param+param2;
 }
 
 /**
@@ -20,7 +20,7 @@ int sum(int param, int param2)
 **/
 int multiply(int param, int param2)
 {
-
+return param*param2;
 }
 /**
 *
@@ -30,7 +30,7 @@ int multiply(int param, int param2)
 
 int pointerSum(int *param, int * param2)
 {
-
+return *param + *param2;
 }
 
 /**
@@ -41,7 +41,7 @@ int pointerSum(int *param, int * param2)
 
 int pointerMultiply(int *param, int * param2)
 {
-
+return *param * *param2;
 }
 /**
 *
@@ -51,9 +51,17 @@ int pointerMultiply(int *param, int * param2)
 **/
 int create1dArray()
 {
-
+for(int i=0; i<=15;i++){
+  arr[i]= new arr [i];
+  cout<<arr[i]<<" ";
 }
-
+}
+void create1dArray::clear(){
+  for(int i=0; i<=15 ; i++){
+    delete arr[i];
+    arr[i]=NULL;
+  }
+}
 /**
 *
 *This function creates a 2-d array on the heap of size 5 X 5. You will initiliaze the array with whatever elements you want. You will then print out the
@@ -65,14 +73,38 @@ int create1dArray()
 
 int create2dArray()
 {
-
+int arr2 [6][6];
+for(int i=0; i<6; i++)	{
+		for(int j=0; j<6; j++) {
+			cout << arr2[i][j]  << "  ";
+		}
+		cout << endl;
+	}
 }
-
+void create2dArray::clear(){
+  for(int i=0; i<6 ; i++){
+    for(int j=0; j<6; j++){
+    delete arr2[i][j];
+    arr[i][j]=NULL;
+  }
+  }
 /*
 *This is where you the program execution starts and you will be calling the functions you implemented from the  main function.
 */
 int main()
 {
-
-
+int sumInt;
+int product;
+int pointSum;
+int pointerProduct;
+int param;
+int param1;
+int *param;
+int *param1;
+int arr[i];
+int arr2[i][j];
+sumInt= sum(param,param1);
+product=multiply(param,param1);
+pointSum= pointerSum(*param, *param1);
+pointerProduct= pointerMultiply(*param,*param1);
 }
